@@ -1,0 +1,7 @@
+interface:
+  display_name: "课堂录音讲解归档"
+  short_description: "结合课堂录音、图片与课件，整理中文讲解并归入对应的课程笔记"
+  default_prompt: "使用 $class-recording-to-obsidian，结合本节录音、课堂图片和课件，补充中文讲解并归入对应的 Obsidian 课程。"
+
+policy:
+  allow_implicit_invocation: true

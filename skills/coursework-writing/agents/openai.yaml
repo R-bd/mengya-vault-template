@@ -1,0 +1,7 @@
+interface:
+  display_name: "课程作业写作与核验"
+  short_description: "每份作业默认核对要求、格式与来源，润色表达，检查标点及写作信号并附核验表"
+  default_prompt: "使用 $coursework-writing 完成或审阅这份作业，默认核对要求、格式、来源与引用，润色表达、检查标点及写作信号，并附逐项核验表。"
+
+policy:
+  allow_implicit_invocation: true
