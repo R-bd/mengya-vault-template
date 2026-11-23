@@ -1,8 +1,8 @@
 # 萌芽知识库模板（mengya-vault-template）
 
-An Obsidian vault template for studying with an AI agent: rules, templates and workflows that turn raw material into traceable, verifiable notes, and keep "what the AI produced" separate from "what you can actually do". The content is in Chinese.
+An Obsidian vault template for coursework and study with an AI agent: rules, templates and workflows that turn raw material into traceable, verifiable notes, and keep "what the AI produced" separate from "what you can actually do". The content is in Chinese.
 
-一套给 Obsidian 用的学习知识库框架，由 AI 代理（按 Codex 写的，其他能读本地文件的代理也能用）按库里的规则页来维护。它管课程资料、作业、课堂录音、每周复盘和自我记录，核心只有两条：结论要能追溯到来源；AI 做出来的东西不算你自己的结果。
+一套给 Obsidian 用的学习知识库框架，由 AI 代理（按 Codex 写的，其他能读本地文件的代理也能用）按库里的规则页来维护。它管课程资料、作业、课堂录音、复习和每周复盘，核心只有两条：结论要能追溯到来源；AI 做出来的东西不算你自己的结果。
 
 这里只有框架，没有任何人的笔记。
 
@@ -35,13 +35,13 @@ An Obsidian vault template for studying with an AI agent: rules, templates and w
 vault/          复制进一个空 Obsidian 库就能用
   AGENTS.md       代理的入口：路由表和底线
   _系统/          共同规则、模块配置、个人配置、技能地图、交接、备份、脚本
-  _模板/          课程、考试复习、自我剖析、播客、项目等模板
+  _模板/          课程、考试复习、项目等模板
   10 原始种子/    来源层，只读；新资料放收件箱
   20 萌芽Wiki/    来源摘要、概念、分析、个人规则、待核、变更日志
   学习笔记/       课程资料流水线和各流程页、项目注册表、能力矩阵
   每周蒸馏/       周报规则
-  自我剖析/       使用说明和引导问题
 skills/         两个自写技能：课程作业写作、课堂录音整理
+agents/         两个只读子代理：课程来源侦察、作业独立复核（Claude Code 与 Codex 两种格式）
 automations/    两个定时任务的提示词示例
 scripts/        导出框架和提交前扫描的脚本
 docs/           多设备接入、隐私边界
@@ -58,13 +58,19 @@ docs/           多设备接入、隐私边界
 
 ## 模块
 
-核心模块是项目管理、能力实验、证据分级和每周蒸馏。课程学习、自我剖析、播客、命理、Anki 都是可选的，在 `_系统/模块配置.md` 里开关。关掉的模块，代理不读取、不引用、不评价。
+核心模块是项目管理、能力实验、证据分级和每周蒸馏。课程学习、SRC 学习、Anki 都是可选的，在 `_系统/模块配置.md` 里开关。关掉的模块，代理不读取、不引用、不评价。
 
-命理模板只把传统说法当作“候选假设”的来源，不当事实，不做预测。不需要就关掉。
+## 写作相关的技能
+
+`coursework-writing` 会调用润色技能和本地写作信号统计。润色是为了让表达自然、贴近你自己的写法，同时保留事实、引用和术语；信号统计只是写作诊断，指出句子节奏单调、套话密集的位置。
+
+- 它们不是 AI 检测器，不输出“AI 生成概率”，也不能预测或规避 Turnitin、GPTZero 之类的工具。不要把降低某个数值当成目标。
+- 用之前先看你所在学校和课程的 AI 使用规定。规定不允许的用途不要用；要求披露 AI 协助时照实披露。
+- AI 写的稿子、改的句子都不算你本人的成果，交上去的内容要你自己能解释、能负责。
 
 ## 已知的缺口
 
-- 模板页里有一些链接指向没有随模板提供的页面，例如 `anki/考试复习/README`、`播客/迭代说明`、`命理研究入口`。启用对应模块时自己建，不用就忽略。
+- 模板页里有一些链接指向没有随模板提供的页面，例如 `anki/考试复习/README`。启用对应模块时自己建，不用就忽略。
 - 课程流程是按“学校教学平台 + Teams”的大学课程写的，`<COURSE-CODE>`、`<学期>`、`<学习者>`、`<时区>` 这些占位符要换成你自己的。
 - 不附带学校网站的采集程序。`vault/学习笔记/学校网站自动检查.md` 只写了这一步该守的规则。
 - `_系统/脚本/状态摘要.py` 读的三个状态文件要等课程流程跑起来才会有。
