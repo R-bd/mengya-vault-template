@@ -42,6 +42,7 @@ vault/          复制进一个空 Obsidian 库就能用
   每周蒸馏/       周报规则
 skills/         两个自写技能：课程作业写作、课堂录音整理
 agents/         两个只读子代理：课程来源侦察、作业独立复核（Claude Code 与 Codex 两种格式）
+examples/       虚构示例：一份作业核验表与写作信号审计
 automations/    两个定时任务的提示词示例
 scripts/        导出框架和提交前扫描的脚本
 docs/           多设备接入、隐私边界
